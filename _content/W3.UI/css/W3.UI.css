@@ -43,7 +43,7 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
-a:active, a:hover {
+a:active, a:hover, a.btn:hover {
   outline-width: 0;
 }
 
@@ -239,17 +239,14 @@ a {
 }
 
 .btn {
-  background-color: #4CAF50;
-  /* Green */
   border: none;
+  /* Remove borders */
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  /* Add a text color */
+  padding: 14px 28px;
+  /* Add some padding */
   cursor: pointer;
+  /* Add a pointer cursor on mouse-over */
 }
 
 .btn:disabled {
@@ -257,8 +254,54 @@ a {
   cursor: not-allowed;
 }
 
-.btn:hover {
+.btn .shadow :hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.success, .btn, .btn:hover {
+  background-color: #4CAF50;
+}
+
+/* Green */
+.success:hover, .btn:hover {
+  background-color: #46a049;
+}
+
+.info {
+  background-color: #2196F3;
+}
+
+/* Blue */
+.info:hover {
+  background: #0b7dda;
+}
+
+.warning {
+  background-color: #ff9800;
+}
+
+/* Orange */
+.warning:hover {
+  background: #e68a00;
+}
+
+.danger {
+  background-color: #f44336;
+}
+
+/* Red */
+.danger:hover {
+  background: #da190b;
+}
+
+.default {
+  background-color: #e7e7e7;
+  color: black;
+}
+
+/* Gray */
+.default:hover {
+  background: #ddd;
 }
 
 .green {
@@ -279,7 +322,7 @@ a {
 }
 
 .black {
-  background-color: #555555;
+  background-color: #111;
 }
 
 .card {
@@ -547,6 +590,86 @@ a {
 /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .content {
   padding-top: 60px;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: #555;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #555;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #555;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  list-style: none;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab a {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab a:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab a.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
 }
 
 .table {
